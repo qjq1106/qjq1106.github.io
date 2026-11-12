@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DeepSeek Harness 个人本机 Google 工作区集成的功能、权限和数据处理说明。">
+  <title>DeepSeek Harness · 本机 Google 工作区集成</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="header wrap">
+    <a class="brand" href="index.html">DeepSeek Harness</a>
+    <nav aria-label="页面导航">
+      <a href="index.html" aria-current="page">应用说明</a>
+      <a href="privacy.html">隐私说明</a>
+      <a href="terms.html">使用条款</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="intro">
+      <p class="eyebrow">本机 Google 工作区集成</p>
+      <h1>在自己的电脑上，<br>处理 Google 工作内容。</h1>
+      <p class="lead">通过本机 Google Workspace CLI 和 MCP 适配器，让 DeepSeek Harness 按用户指令查询邮件、管理文件、处理日历和查找联系人。</p>
+      <p class="maintainer">由 GitHub 用户 qjq1106 维护，供本人连接自己的 Google 账号使用。</p>
+    </section>
+
+    <section class="section" aria-labelledby="features">
+      <h2 id="features">可以处理的内容</h2>
+      <dl class="services">
+        <div><dt>Gmail</dt><dd>搜索和阅读邮件、处理标签，并按用户指令修改邮件状态或发送邮件。</dd></div>
+        <div><dt>Google Drive</dt><dd>搜索、读取和下载文件，并按用户指令上传、整理或修改文件。</dd></div>
+        <div><dt>Google Calendar</dt><dd>查询日历和日程，并按用户指令创建、更新或删除日程。</dd></div>
+        <div><dt>Google Contacts</dt><dd>读取联系人资料，帮助查找姓名、邮箱和相关联系信息。</dd></div>
+      </dl>
+    </section>
+
+    <section class="section" aria-labelledby="flow">
+      <h2 id="flow">数据如何流转</h2>
+      <p>Google API 返回的数据由本机 CLI 和 MCP 适配器交给 Harness。任务需要模型理解这些内容时，相关内容会随会话发送给 Harness 中配置的模型服务提供方。</p>
+      <p>OAuth 令牌通过本机 CLI 加密保存。工具结果和任务内容可能保存在本机 Harness 会话记录中。模型服务的数据处理方式取决于当前提供方及其账号设置。</p>
+      <a class="text-link" href="privacy.html">查看完整隐私说明 <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="section" aria-labelledby="access">
+      <h2 id="access">授权与支持</h2>
+      <p>Google 登录和授权由账号所有者在 Google 页面完成。用户可在 Google 账号的第三方连接设置中撤销本集成的访问权限。</p>
+      <p>需要联系维护者时，可使用 Google 授权页面中显示的应用支持邮箱。</p>
+      <a class="text-link" href="https://myaccount.google.com/connections">打开 Google 账号连接设置 <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="footer wrap">
+    <p>DeepSeek Harness 个人本机集成</p>
+    <div><a href="privacy.html">隐私说明</a><a href="terms.html">使用条款</a></div>
+  </footer>
+</body>
+</html>
