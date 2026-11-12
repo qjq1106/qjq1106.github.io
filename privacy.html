@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DeepSeek Harness 本机 Google 集成如何访问、使用、存储和传输 Google 用户数据。">
+  <title>隐私说明 · DeepSeek Harness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="header wrap">
+    <a class="brand" href="index.html">DeepSeek Harness</a>
+    <nav aria-label="页面导航">
+      <a href="index.html">应用说明</a><a href="privacy.html" aria-current="page">隐私说明</a><a href="terms.html">使用条款</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap document">
+    <h1>隐私说明</h1>
+    <p class="updated">更新于 2026 年 11 月 12 日</p>
+    <p>本说明适用于由 GitHub 用户 qjq1106 维护的 DeepSeek Harness 个人本机 Google 工作区集成，覆盖本机 Google Workspace CLI、MCP 适配器和 Harness 会话中的相关数据处理。</p>
+
+    <section aria-labelledby="data"><h2 id="data">访问的数据与用途</h2>
+      <p>本集成根据用户发出的任务调用 Google API。当前授权范围覆盖 Drive 文件读写、Gmail 邮件与标签的读取和修改、日历读写，以及联系人只读。Google 登录还涉及基本账号身份信息。</p>
+      <ul>
+        <li>邮件任务可能涉及邮件标题、正文、收发件人、附件和标签，用于搜索、整理、总结或按指令处理邮件。</li>
+        <li>文件任务可能涉及文件名称、元信息、内容和共享设置，用于查找、读取、下载、上传或管理文件。</li>
+        <li>日历任务可能涉及日程标题、时间、说明和参与者，用于查询安排或按指令管理日程。</li>
+        <li>联系人任务可能涉及姓名、邮箱、电话和其他已保存资料，用于查找联系人。</li>
+      </ul>
+      <p>具体读取的内容取决于任务和 API 请求的字段。修改、发送、共享或删除操作依据用户指令执行。</p>
+    </section>
+
+    <section aria-labelledby="processing"><h2 id="processing">本机处理与模型服务</h2>
+      <p>Google API 的响应先由本机 CLI 和 MCP 适配器处理，再进入 Harness 的工具结果或会话上下文。模型执行任务时，相关会话内容可能发送给 Harness 中配置的模型服务提供方及其接入网关。</p>
+      <p>模型服务对请求内容的保存、使用和删除方式由该服务的条款及账号设置决定。使用者需要核对当前配置的服务及其数据政策。模型提供方的具体数据保留期限尚未由本集成独立核实。</p>
+      <p>本机适配器将 API 响应交给当前任务使用，数据处理范围由任务内容、已授予的权限和 Harness 配置共同决定。</p>
+    </section>
+
+    <section aria-labelledby="storage"><h2 id="storage">保存位置与期限</h2>
+      <p>Google Workspace CLI 将 OAuth 令牌加密保存在本机，并通过 Windows 凭据机制保护加密密钥。桌面 OAuth 客户端配置以本机配置文件保存。</p>
+      <p>读取的工具结果和生成内容可能保存在 Harness 的本机会话历史中。用户主动下载的文件、导出的内容和任务创建的临时文件也可能保留在本机，直到用户删除或由相关软件按自身规则清理。本集成尚未设置统一的自动到期删除周期。</p>
+      <p>Google 云端的邮件、文件、日程和联系人由 Google 服务管理。模型服务端的数据保存期限以当前提供方的实际政策为准。</p>
+    </section>
+
+    <section aria-labelledby="control"><h2 id="control">撤销授权与删除数据</h2>
+      <p>用户可在 Google 账号的第三方连接设置中撤销 DeepSeek Harness 的访问权限。撤销后，再次访问需要重新授权。</p>
+      <p>用户可清理本机 CLI 的授权凭证、Harness 会话历史及已下载或导出的文件。撤销 Google 授权后，已生成的本机副本仍需要分别清理。模型服务端的历史内容可按对应服务提供的方式申请删除。</p>
+      <p><a href="https://myaccount.google.com/connections">前往 Google 账号连接设置</a></p>
+    </section>
+
+    <section aria-labelledby="website"><h2 id="website">说明网站的访问数据</h2>
+      <p>本说明网站由静态 HTML 和 CSS 组成。部署至 GitHub Pages 后，GitHub 会按其隐私声明处理访客的 IP 地址等托管访问数据。</p>
+      <p>本网站的页面代码仅提供应用、隐私及使用说明。Google 登录和账号授权通过 Google 的正式页面进行。</p>
+      <p><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">查看 GitHub 隐私声明</a></p>
+    </section>
+
+    <section aria-labelledby="contact"><h2 id="contact">联系与说明更新</h2>
+      <p>如需查询本集成的数据处理方式或提出删除请求，请联系 Google 授权页面显示的应用支持邮箱。数据用途、授权范围或处理流程发生变化时，本说明应同步更新，并在需要时重新取得用户同意。</p>
+    </section>
+  </main>
+  <footer class="footer wrap"><p>DeepSeek Harness 个人本机集成</p><div><a href="index.html">应用说明</a><a href="terms.html">使用条款</a></div></footer>
+</body>
+</html>
